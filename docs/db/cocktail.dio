@@ -1,60 +1,65 @@
 <mxfile>
     <diagram id="MJq8JCubyENlRuld_tk9" name="ページ1">
-        <mxGraphModel dx="534" dy="512" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="0" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="384" dy="360" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="0" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
+                <mxCell id="42" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;fontColor=#000000;startArrow=ERone;startFill=0;endArrow=ERoneToMany;endFill=0;" parent="1" source="2" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="339.9999999999999" y="217.75862068965523" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
                 <mxCell id="2" value="cocktail_recipe" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fillColor=#647687;strokeColor=#314354;fontColor=#ffffff;strokeWidth=2;" parent="1" vertex="1">
-                    <mxGeometry x="100" y="140" width="230" height="234" as="geometry">
+                    <mxGeometry x="40" y="114" width="230" height="156" as="geometry">
                         <mxRectangle x="100" y="140" width="110" height="26" as="alternateBounds"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="3" value="cocktail_recipe_id（主キー）" style="text;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBackgroundColor=none;labelBorderColor=none;fontStyle=0;fillColor=#cce5ff;strokeColor=#36393d;fontColor=#333333;strokeWidth=2;" parent="2" vertex="1">
+                <mxCell id="3" value="id（主キー）" style="text;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBackgroundColor=none;labelBorderColor=none;fontStyle=0;fillColor=#cce5ff;strokeColor=#36393d;fontColor=#333333;strokeWidth=2;" parent="2" vertex="1">
                     <mxGeometry y="26" width="230" height="26" as="geometry"/>
                 </mxCell>
-                <mxCell id="24" value="cocktail_name（カクテル名）" style="text;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBackgroundColor=none;labelBorderColor=none;fontStyle=0;dashed=1;fillColor=#eeeeee;fontColor=#4D4D4D;" vertex="1" parent="2">
+                <mxCell id="24" value="name（カクテル名）" style="text;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBackgroundColor=none;labelBorderColor=none;fontStyle=0;dashed=1;fillColor=#eeeeee;fontColor=#4D4D4D;" parent="2" vertex="1">
                     <mxGeometry y="52" width="230" height="26" as="geometry"/>
                 </mxCell>
-                <mxCell id="4" value="ingredient_name（材料名）" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fillColor=#eeeeee;strokeColor=#36393d;fontColor=#4D4D4D;" parent="2" vertex="1">
+                <mxCell id="16" value="recipe（レシピ）" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;shadow=0;fillColor=#eeeeee;strokeColor=#36393d;fontColor=#4D4D4D;" parent="2" vertex="1">
                     <mxGeometry y="78" width="230" height="26" as="geometry"/>
                 </mxCell>
-                <mxCell id="14" value="ingredient_quantity（材料の分量）&#10;&#10;&#10;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fillColor=#eeeeee;strokeColor=#36393d;fontColor=#4D4D4D;" parent="2" vertex="1">
+                <mxCell id="18" value="cocktail_style（カクテルのスタイル）" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;shadow=0;fillColor=#eeeeee;strokeColor=#36393d;fontColor=#4D4D4D;" parent="2" vertex="1">
                     <mxGeometry y="104" width="230" height="26" as="geometry"/>
                 </mxCell>
-                <mxCell id="16" value="recipe（レシピ）" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;shadow=0;fillColor=#eeeeee;strokeColor=#36393d;fontColor=#4D4D4D;" parent="2" vertex="1">
+                <mxCell id="5" value="alcohol（アルコール）" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;shadow=0;fillColor=#eeeeee;strokeColor=#36393d;fontColor=#4D4D4D;" parent="2" vertex="1">
                     <mxGeometry y="130" width="230" height="26" as="geometry"/>
                 </mxCell>
-                <mxCell id="18" value="cocktail_style（カクテルのスタイル。）" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;shadow=0;fillColor=#eeeeee;strokeColor=#36393d;fontColor=#4D4D4D;" parent="2" vertex="1">
-                    <mxGeometry y="156" width="230" height="26" as="geometry"/>
+                <mxCell id="8" value="cocktail_ingredient" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;shadow=0;swimlaneLine=1;fillColor=#647687;strokeColor=#314354;labelBackgroundColor=none;verticalAlign=middle;fontColor=#FFFFFF;" parent="1" vertex="1">
+                    <mxGeometry x="690" y="114" width="270" height="104" as="geometry"/>
                 </mxCell>
-                <mxCell id="5" value="alcohol（アルコール）" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;shadow=0;fillColor=#eeeeee;strokeColor=#36393d;fontColor=#4D4D4D;" parent="2" vertex="1">
-                    <mxGeometry y="182" width="230" height="26" as="geometry"/>
-                </mxCell>
-                <mxCell id="17" value="base_name（材料のベース名）" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;shadow=0;fillColor=#eeeeee;strokeColor=#36393d;fontColor=#4D4D4D;" parent="2" vertex="1">
-                    <mxGeometry y="208" width="230" height="26" as="geometry"/>
-                </mxCell>
-                <mxCell id="8" value="cocktail_ingredientes" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;shadow=0;swimlaneLine=1;fillColor=#647687;strokeColor=#314354;fontColor=#ffffff;" parent="1" vertex="1">
-                    <mxGeometry x="490" y="140" width="270" height="182" as="geometry"/>
-                </mxCell>
-                <mxCell id="9" value="cocktail_ingredientes_id（主キー）" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fillColor=#dae8fc;fontColor=#333333;strokeWidth=2;strokeColor=#000000;" parent="8" vertex="1">
+                <mxCell id="9" value="id（主キー）" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fillColor=#dae8fc;fontColor=#333333;strokeWidth=2;strokeColor=#000000;" parent="8" vertex="1">
                     <mxGeometry y="26" width="270" height="26" as="geometry"/>
                 </mxCell>
-                <mxCell id="22" value="ingredient_name（材料名）" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="8">
+                <mxCell id="22" value="name（材料名）" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="8" vertex="1">
                     <mxGeometry y="52" width="270" height="26" as="geometry"/>
                 </mxCell>
-                <mxCell id="10" value="ingredient_type（材料の種類）" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="8" vertex="1">
+                <mxCell id="10" value="type（材料の種類）" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="8" vertex="1">
                     <mxGeometry y="78" width="270" height="26" as="geometry"/>
                 </mxCell>
-                <mxCell id="19" value="ingredient_quantity（材料の分量）&#10;&#10;&#10;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="8" vertex="1">
+                <mxCell id="32" value="cocktail_ingredient_quantity" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;shadow=0;swimlaneLine=1;fillColor=#647687;strokeColor=#314354;fontColor=#ffffff;fontSize=11;verticalAlign=middle;" parent="1" vertex="1">
+                    <mxGeometry x="340" y="114" width="270" height="156" as="geometry"/>
+                </mxCell>
+                <mxCell id="35" value="cocktail_recipe.id（外部キー）" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="32" vertex="1">
+                    <mxGeometry y="26" width="270" height="26" as="geometry"/>
+                </mxCell>
+                <mxCell id="34" value="cocktail_ingredient.id（外部キー）" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#000000;" parent="32" vertex="1">
+                    <mxGeometry y="52" width="270" height="26" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="quantity（材料の分量）&#10;&#10;&#10;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="32" vertex="1">
+                    <mxGeometry y="78" width="270" height="26" as="geometry"/>
+                </mxCell>
+                <mxCell id="40" value="unit（材料の単位）&#10;&#10;&#10;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="32" vertex="1">
                     <mxGeometry y="104" width="270" height="26" as="geometry"/>
                 </mxCell>
-                <mxCell id="15" value="ingredient_unit（材料の単位）&#10;&#10;&#10;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="8" vertex="1">
+                <mxCell id="15" value="base_flag（カクテルのベースかどうか）" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="32" vertex="1">
                     <mxGeometry y="130" width="270" height="26" as="geometry"/>
                 </mxCell>
-                <mxCell id="11" value="cocktail_name（カクテル名。FK）" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="8" vertex="1">
-                    <mxGeometry y="156" width="270" height="26" as="geometry"/>
-                </mxCell>
-                <mxCell id="23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=ERone;startFill=0;endArrow=ERoneToMany;endFill=0;strokeWidth=2;fillColor=#647687;strokeColor=#000000;" edge="1" parent="1" source="14" target="19">
+                <mxCell id="43" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;startArrow=ERoneToMany;startFill=0;endArrow=ERone;endFill=0;fontColor=#000000;" parent="1" source="34" target="10" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
             </root>
