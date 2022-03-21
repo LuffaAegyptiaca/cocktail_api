@@ -36,9 +36,9 @@ func getDbEnv() (df *DBConf, err error) {
 		Password: os.Getenv("PASSWORD"),
 		Database: os.Getenv("DATABASE"),
 	}
-	// チェック
+	// チェック用。基本コメント化。
+	// TODO: デバックフラグを立てているときは、出力できるようにするなどして、確認したい時に都度コメントを外す運用をなくす。
 	// fmt.Printf("HOST = %s, PORT = %s, USER = %s, PASSWORD = %s", df.Host, df.Port, df.User, df.Password)
-	// print(df)
 	return df, nil
 }
 func Connect() *sql.DB {
@@ -50,6 +50,5 @@ func Connect() *sql.DB {
 	if err != nil {
 		panic(err.Error())
 	}
-	// defer db.Close()
 	return db
 }
