@@ -24,13 +24,6 @@ type User struct {
 	UpdatedAt    time.Time
 }
 
-type DBConf struct {
-	Host     string
-	Port     string
-	User     string
-	Password string
-}
-
 func main() {
 	fmt.Println("start echo server")
 	// Echo instance
