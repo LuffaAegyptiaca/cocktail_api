@@ -14,12 +14,14 @@ type DBConf struct {
 	Port     string
 	User     string
 	Password string
+	Database string
 }
 
 // envからDB関係の環境変数を取得する関数
 func getDbEnv() (df *DBConf, err error) {
-	// 環境変数を読み込み
-	err = godotenv.Load()
+	// 環境変数を定義したファイルから読み込み
+	// TODO: 開発途中なので、環境変数を固定値にしているが、開発用と本番用の切り替えをできるようにする
+	err = godotenv.Load(".env")
 
 	// エラーチェック
 	if err != nil {
@@ -32,6 +34,7 @@ func getDbEnv() (df *DBConf, err error) {
 		Port:     os.Getenv("PORT"),
 		User:     os.Getenv("USER"),
 		Password: os.Getenv("PASSWORD"),
+		Database: os.Getenv("DATABASE"),
 	}
 	// チェック
 	// fmt.Printf("HOST = %s, PORT = %s, USER = %s, PASSWORD = %s", df.Host, df.Port, df.User, df.Password)
@@ -43,8 +46,7 @@ func Connect() *sql.DB {
 	if err != nil {
 		fmt.Println("getDbEnv err")
 	}
-	dbName := "cocktail"
-	db, err := sql.Open("postgres", "host="+df.Host+" user="+df.User+" password="+df.Password+" dbname="+dbName+" port="+df.Port+" sslmode=disable TimeZone=Asia/Shanghai")
+	db, err := sql.Open("postgres", "host="+df.Host+" user="+df.User+" password="+df.Password+" dbname="+df.Database+" port="+df.Port+" sslmode=disable TimeZone=Asia/Shanghai")
 	if err != nil {
 		panic(err.Error())
 	}
