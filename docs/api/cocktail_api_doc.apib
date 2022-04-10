@@ -1,0 +1,74 @@
+FORMAT: 1A
+
+# カクテルAPI ドキュメント
+カクテルAPIのドキュメントです。現状はカクテル一覧をDBから取得するだけです。  
+また、各ユーザ情報もDBでは管理していません。
+
+# Group Cocktails
+
+リクエストパラメータで取得するカクテルレシピ一覧を絞って取得できます。
+
+## カクテルAPI [/v1/cocktails{?base,alcohol_from,alcohol_to,have_drinks}]
+### カクテルレシピ一覧取得 [GET]
+#### 処理概要
+* クエリパラメータをつけない場合は、DBに登録されているすべてのカクテルレシピを返す
+* 複数のリクエストパラメータをつけた場合は&条件のカクテルレシピを返す
+* have_drinks指定時の仕様
+    * カンマ区切りで複数個のパラメータを渡せる
+    * 一部の材料は持っている前提でレスポンスを返す
+        * 例：シュガー・シロップ。氷など。
+
++ Parameters
+    + base: ホワイトラム (string, optional) - カクテルのベース
+    + alcohol_from: 5 (number, optional) - 指定した数値以上のアルコール度数のカクテルレシピを返す
+    + alcohol_to: 30 (number, optional) - 指定した数値以上のアルコール度数のカクテルレシピ
+    + have_drinks: ホワイトラム,コーラ,ライムジュース (string, optional) - 持っているカクテルの材料一覧
+        
++ Response 200(application/json)
+
+    + Attributes
+        + cocktail_recipes (array)
+            + (object) 
+                + name: ラムコーク (string, required) 
+                + ingredients (array)
+                    + (object)
+                        + name: ホワイトラム (string, required)
+                        + quantity: 30 (number, required)
+                        + unit: ml (string, required)
+                    + (object)
+                        + name: コーラ (string, required)
+                        + quantity: 100 (number, required)
+                        + unit: ml (string, required)
+                    + (object)
+                        + name: 氷 (string, required)
+                        + quantity: -1 (number, required)
+                        + unit: 適量 (string, required)
+                + recipe: 氷を入れたグラスにラムとコーラを注ぎ、軽くかき混ぜる。 (string, required)
+                + cocktail_style: ロング (string, required) 
+                + alcohol: 12 (number, required)
+            + (object) 
+                + name: ダイキリ (string, required)
+                + ingredients (array)
+                    + (object)
+                        + name: ホワイトラム (string, required)
+                        + quantity: 45 (number, required)
+                        + unit: ml (string, required)
+                    + (object)
+                        + name: ラムジュース (string, required)
+                        + quantity: 15 (number, required)
+                        + unit: ml (string, required)
+                    + (object)
+                        + name: シュガー・シロップ (string, required)
+                        + quantity: 1 (number, required)
+                        + unit: step (string, required)
+                + recipe: 氷の入ったシェイカーに全ての材料を入れてシェーク。(string, required)
+                + cocktail_style: ショート (string, required) 
+                + alcohol: 30 (number, required)
+
++ Response 404(application/json)
+    + Attributes
+        + msg: リクエストパラメータの形式に問題があります。確認してください。 (string, required) 
+
++ Response 500(application/json)
+    + Attributes
+        + msg: APIサーバー側で問題が起きています。担当者に連絡してください。 (string, required)         
