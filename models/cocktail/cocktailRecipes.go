@@ -1,4 +1,6 @@
-package models
+package cocktail
+
+import "database/sql"
 
 type CocktailRecipes struct {
 	Id            int    `json:"id"`
@@ -6,4 +8,8 @@ type CocktailRecipes struct {
 	Recipe        string `json:"recipe"`
 	CocktailStyle string `json:"cocktail_style"`
 	Alcohol       int    `json:"alcohol"`
+}
+
+func NewCocktailRecipes(db *sql.DB) *CocktailRecipes {
+	return &CocktailRecipes{}
 }

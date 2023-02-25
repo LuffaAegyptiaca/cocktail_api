@@ -1,4 +1,6 @@
-package models
+package cocktail
+
+import "database/sql"
 
 type CocktailIngredientQuantity struct {
 	CocktailRecipeId     int    `json:"cocktail_recipe_id"`
@@ -6,4 +8,8 @@ type CocktailIngredientQuantity struct {
 	Quantity             int    `json:"quantity"`
 	Unit                 string `json:"unit"`
 	BaseFlag             bool   `json:"base_flag"`
+}
+
+func NewCocktailIngredientQuantity(db *sql.DB) *CocktailIngredientQuantity {
+	return &CocktailIngredientQuantity{}
 }
