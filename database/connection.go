@@ -21,7 +21,7 @@ type DBConf struct {
 func getDbEnv() (df *DBConf, err error) {
 	// 環境変数を定義したファイルから読み込み
 	// TODO: 開発途中なので、環境変数を固定値にしているが、開発用と本番用の切り替えをできるようにする
-	err = godotenv.Load(".env")
+	err = godotenv.Load("./database/.env")
 
 	// エラーチェック
 	if err != nil {
@@ -38,13 +38,14 @@ func getDbEnv() (df *DBConf, err error) {
 	}
 	// チェック用。基本コメント化。
 	// TODO: デバックフラグを立てているときは、出力できるようにするなどして、確認したい時に都度コメントを外す運用をなくす。
-	// fmt.Printf("HOST = %s, PORT = %s, USER = %s, PASSWORD = %s", df.Host, df.Port, df.User, df.Password)
+	// fmt.Printf("HOST = %s, PORT = %s, USER = %s, PASSWORD = %s\n", df.Host, df.Port, df.User, df.Password)
 	return df, nil
 }
 func Connect() *sql.DB {
 	df, err := getDbEnv()
 	if err != nil {
 		fmt.Println("getDbEnv err")
+		fmt.Println(err)
 	}
 	db, err := sql.Open("postgres", "host="+df.Host+" user="+df.User+" password="+df.Password+" dbname="+df.Database+" port="+df.Port+" sslmode=disable TimeZone=Asia/Shanghai")
 	if err != nil {
