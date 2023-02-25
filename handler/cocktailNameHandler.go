@@ -2,7 +2,7 @@ package handler
 
 import (
 	"cocktail_api/database"
-	"cocktail_api/models"
+	"cocktail_api/models/cocktail"
 	"fmt"
 	"net/http"
 
@@ -18,11 +18,11 @@ func GetCocktailsIngredient(c echo.Context) error {
 		fmt.Println("err: ", err)
 	}
 
-	resData := map[string][]models.CocktailRecipes{}
+	resData := map[string][]cocktail.CocktailRecipes{}
 	resData["cocktail_recipes"] = nil
 	// データ読み込み
 	for rows.Next() {
-		var cim models.CocktailRecipes
+		var cim cocktail.CocktailRecipes
 		rows.Scan(&cim.Id, &cim.Name, &cim.Recipe, &cim.CocktailStyle, &cim.Alcohol)
 		resData["cocktail_recipes"] = append(resData["cocktail_recipes"], cim)
 	}
@@ -57,11 +57,11 @@ func GetCocktailsIngredientBase(c echo.Context) error {
 		fmt.Println("err: ", err)
 	}
 
-	resData := map[string][]models.CocktailRecipes{}
+	resData := map[string][]cocktail.CocktailRecipes{}
 	resData["cocktail_recipes"] = nil
 	// データ読み込み
 	for rows.Next() {
-		var cim models.CocktailRecipes
+		var cim cocktail.CocktailRecipes
 		rows.Scan(&cim.Id, &cim.Name, &cim.Recipe, &cim.CocktailStyle, &cim.Alcohol)
 		resData["cocktail_recipes"] = append(resData["cocktail_recipes"], cim)
 	}
