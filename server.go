@@ -34,8 +34,16 @@ func main() {
 	e.Use(middleware.Recover())
 
 	// Routes
+
+	// 起動確認用。最終的に消す。
 	e.GET("/", hello)
-	e.GET("/get/:id", handler.GetCocktailsIngredient)
+
+	// 全レシピ返すやつ
+	// 件数多くない＆追加はしない仕様なので、ページングはAPP側に任せる
+	// クエリパラメータは共通のパラメータを利用する。
+	// 項目はアルコール度数(under-alcohol, over-alcohol)と飲み方（type（ショートカクテルとか））
+	e.GET("/v1/cocktails", handler.CocktailAllRecipes)
+	e.GET("/v1/cocktails/:base", handler.CocktailRecipes)
 
 	// Start server
 	e.Logger.Fatal(e.Start(":1323"))

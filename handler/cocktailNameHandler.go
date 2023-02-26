@@ -9,7 +9,7 @@ import (
 	"github.com/labstack/echo"
 )
 
-func GetCocktailsIngredient(c echo.Context) error {
+func CocktailAllRecipes(c echo.Context) error {
 	// DB接続~クエリ実行まで
 	db := database.Connect()
 	defer db.Close()
@@ -34,8 +34,9 @@ func GetCocktailsIngredient(c echo.Context) error {
 	return c.JSON(http.StatusOK, resData)
 }
 
-// TODO:関数名を変える必要あり。
-func GetCocktailsIngredientBase(c echo.Context) error {
+func CocktailRecipes(c echo.Context) error {
+	base := c.Param("base")
+
 	// DB接続~クエリ実行まで
 	db := database.Connect()
 	defer db.Close()
@@ -52,7 +53,8 @@ func GetCocktailsIngredientBase(c echo.Context) error {
 		INNER JOIN cocktail_ingredient          AS ci  ON ciq.cocktail_ingredient_id = ci.id
 		WHERE
 			ciq.base_flag = true
-			AND ci.name = $1`, c.Param("name"))
+			AND ci.name = $1
+	`, base)
 	if err != nil {
 		fmt.Println("err: ", err)
 	}
@@ -65,6 +67,7 @@ func GetCocktailsIngredientBase(c echo.Context) error {
 		rows.Scan(&cim.Id, &cim.Name, &cim.Recipe, &cim.CocktailStyle, &cim.Alcohol)
 		resData["cocktail_recipes"] = append(resData["cocktail_recipes"], cim)
 	}
+
 	// デバック用
 	fmt.Printf("%v", resData)
 	if err != nil {
